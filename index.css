@@ -1,0 +1,36 @@
+
+body {
+background-repeat: no-repeat;
+background-attachment: fixed;
+background: #EEEEEE;
+font-family: 'Open Sans', sans-serif;
+}
+.dodo{
+    margin: auto;  
+    display: block;
+    text-align: center;  
+}
+
+.mycontact{
+	margin: auto;    
+    display: block;
+    text-align: right;
+}
+.myname{
+	margin: auto;    
+    display: block;
+    text-align: left;
+    font-size: 70px;
+}
+.contact_info{
+	margin: auto;    
+    display: block;
+    text-align: right;
+}
+
+.card-text{
+	font-size: 15px
+}
+.card-header{
+	font-size: 20px
+}
