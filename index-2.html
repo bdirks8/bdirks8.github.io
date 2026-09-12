@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brad Dirks</title>
+  <style>
+    :root {
+      --text: #1f1f1f;
+      --muted: #555;
+      --line: #d7d7d7;
+      --accent: #174f87;
+      --background: #fff;
+      --max-width: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      font-size: 15px;
+      line-height: 1.42;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .page {
+      width: min(var(--max-width), calc(100% - 36px));
+      margin: 24px auto 42px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .portrait {
+      width: 118px;
+      height: 145px;
+      object-fit: cover;
+      background: #eee;
+      border: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 2.25rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+
+    .contact {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .contact p { margin: 2px 0; }
+
+    section {
+      padding: 15px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 9px;
+      font-size: 1.18rem;
+      font-weight: 600;
+    }
+
+    .bio {
+      max-width: 920px;
+      font-size: .98rem;
+      line-height: 1.45;
+    }
+
+    details { border: 0; }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      width: max-content;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::before {
+      content: "+";
+      width: 1rem;
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    details[open] summary::before { content: "−"; }
+
+    .teaching-list {
+      margin: 8px 0 0 25px;
+      padding-left: 15px;
+    }
+
+    .teaching-list li { margin: 2px 0; }
+
+    .papers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+
+    .paper {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 118px;
+      gap: 7px;
+      align-items: center;
+      margin: 0;
+      padding: 4px 8px;
+      border: 1px solid #dedede;
+      border-radius: 4px;
+      background: #fff;
+      line-height: 1.24;
+      min-height: 0;
+      height: auto;
+      overflow: visible;
+    }
+
+    .paper-number {
+      color: #8a8a8a;
+      font-size: 0.8rem;
+      min-width: 0;
+      align-self: center;
+      padding-top: 0;
+    }
+
+    .paper-info {
+      min-width: 0;
+      align-self: center;
+      overflow: visible;
+    }
+
+    .paper-citation {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      line-height: 1.22;
+      white-space: normal;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    .paper-title {
+      font-weight: 700;
+      display: inline;
+    }
+
+    .paper-meta {
+      display: inline;
+      color: inherit;
+      margin: 0;
+    }
+
+    .journal { font-style: italic; }
+
+    .buttons {
+      width: 118px;
+      min-width: 0;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 3px 6px;
+      border: 1px solid #8fa9c1;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--accent);
+      font-size: .8rem;
+      line-height: 1.15;
+      text-align: center;
+      text-decoration: none;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      border-color: var(--accent);
+      background: #f4f8fb;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 26px, var(--max-width));
+        margin-top: 18px;
+      }
+
+      header {
+        grid-template-columns: 88px 1fr;
+        gap: 16px;
+      }
+
+      .portrait {
+        width: 88px;
+        height: 108px;
+      }
+
+      h1 { font-size: 1.85rem; }
+
+      .papers { grid-template-columns: 1fr; }
+
+      .paper {
+        grid-template-columns: 30px minmax(0, 1fr) 88px;
+        gap: 5px;
+        padding: 5px 6px;
+      }
+
+      .paper-number {
+        min-width: 0;
+      }
+
+      .paper-info,
+      .paper-title,
+      .journal {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      .buttons {
+        width: 88px;
+        min-width: 0;
+        max-width: 88px;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .button {
+        min-width: 0;
+        max-width: 100%;
+        padding-left: 4px;
+        padding-right: 4px;
+        overflow-wrap: anywhere;
+      }
+    }
+
+
+    @media (max-width: 390px) {
+      .page {
+        width: calc(100% - 16px);
+      }
+
+      .paper {
+        grid-template-columns: 24px minmax(0, 1fr) 76px;
+        gap: 4px;
+        padding: 4px 5px;
+      }
+
+      .buttons {
+        width: 76px;
+        min-width: 0;
+        max-width: 76px;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .paper-number {
+        font-size: 0.74rem;
+      }
+
+      .button {
+        font-size: 0.74rem;
+        padding: 3px;
+      }
+    }
+
+    /* Secret 3D mode. Flat state is visually identical to a normal page. */
+    #three-stage {
+      perspective: 2200px;
+      perspective-origin: 50% 140px;
+      overflow: visible;
+      padding-bottom: 32px;
+    }
+
+    #three-sheet {
+      position: relative;
+      transform-style: preserve-3d;
+      transform-origin: 50% 140px;
+      transition: transform 120ms ease-out;
+      will-change: transform;
+    }
+
+    #three-sheet::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: #fff;
+      border: 1px solid transparent;
+      transform: translateZ(-4px);
+      pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #three-sheet { transition: none; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="three-stage">
+    <div id="three-sheet">
+<main class="page">
+    <header>
+      <!-- Keep sitePic.jpg in the same folder as this file. -->
+      <img class="portrait" src="sitePic.jpg" alt="Brad Dirks">
+
+      <div>
+        <h1>Brad Dirks</h1>
+        <div class="contact">
+          <p>Office: Math Tower 4-105</p>
+          <p>Email: <a href="mailto:bradley.dirks@stonybrook.edu">bradley.dirks@stonybrook.edu</a></p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Biography</h2>
+      <div class="bio">
+        I am a Simons Instructor at Stony Brook University, mentored by
+        <a href="https://www.math.stonybrook.edu/~cschnell/">Christian Schnell</a>,
+        and previously sponsored by the NSF MSPRF. For the 2024-2025 academic year,
+        I was a Postdoctoral Member at the Institute for Advanced Study. In Spring 2023,
+        I graduated with a PhD in Mathematics from University of Michigan. My advisor was
+        <a href="http://www-personal.umich.edu/~mmustata/">Mircea Mustaţă</a>.
+        Before that, I was an undergraduate student at UCLA. I am interested in Hodge theory,
+        D-modules and singularities in algebraic geometry.
+      </div>
+    </section>
+
+    <section>
+      <details>
+        <summary><h2 style="margin:0">Teaching</h2></summary>
+        <ul class="teaching-list">
+          <li>Winter 2022: Math 116 (Calc 2)</li>
+          <li>Fall 2021: Math 115 (Calc 1)</li>
+          <li>Fall 2020: Math 115 (Calc 1)</li>
+          <li>Fall 2019: Math 116 (Calc 2)</li>
+          <li>Winter 2019: Math 115 (Calc 1)</li>
+          <li>Fall 2018: Math 105 (Pre-Calc)</li>
+        </ul>
+      </details>
+    </section>
+
+    <section>
+      <h2>Papers</h2>
+      <div id="papers" class="papers"></div>
+    </section>
+  </main>
+    </div>
+  </div>
+
+  <script src="papers.js"></script>
+  <script>
+    const papersContainer = document.getElementById("papers");
+
+    function addText(parent, value) {
+      parent.appendChild(document.createTextNode(value));
+    }
+
+    [...PAPERS].reverse().forEach((paper, index) => {
+      const entry = document.createElement("article");
+      entry.className = "paper";
+
+      const number = document.createElement("div");
+      number.className = "paper-number";
+      number.textContent = (index + 1) + ".";
+      entry.appendChild(number);
+
+      const info = document.createElement("div");
+      info.className = "paper-info";
+
+      const citationBlock = document.createElement("div");
+      citationBlock.className = "paper-citation";
+      info.appendChild(citationBlock);
+
+      const title = document.createElement("span");
+      title.className = "paper-title";
+      title.textContent = paper.title || "";
+      citationBlock.appendChild(title);
+
+      if (paper.coauthors) {
+        addText(citationBlock, ", with ");
+        const authors = document.createElement("span");
+        authors.className = "paper-meta";
+        authors.textContent = paper.coauthors;
+        citationBlock.appendChild(authors);
+      }
+
+      if (paper.journal) {
+        addText(citationBlock, ". ");
+        const journal = document.createElement("span");
+        journal.className = "journal";
+        journal.textContent = paper.journal;
+        citationBlock.appendChild(journal);
+      }
+
+      if (paper.volume) {
+        addText(citationBlock, paper.journal ? " " : ". ");
+        addText(citationBlock, paper.volume);
+      }
+
+      if (paper.year) {
+        addText(citationBlock, paper.volume || paper.journal ? " (" : ". (");
+        addText(citationBlock, paper.year);
+        addText(citationBlock, ")");
+      }
+
+      if (paper.pages) {
+        addText(citationBlock, (paper.volume || paper.year || paper.journal) ? ", " : ". ");
+        addText(citationBlock, paper.pages);
+      } else if (paper.pageCount) {
+        addText(citationBlock, (paper.volume || paper.year || paper.journal) ? ", " : ". ");
+        addText(citationBlock, paper.pageCount);
+        addText(citationBlock, " pp.");
+      }
+
+      addText(citationBlock, ".");
+      entry.appendChild(info);
+
+      const links = document.createElement("div");
+      links.className = "buttons";
+
+      if (Array.isArray(paper.buttons)) {
+        paper.buttons.forEach((item) => {
+          if (!item || !item.title || !item.url) return;
+          const link = document.createElement("a");
+          link.className = "button";
+          link.href = item.url;
+          link.textContent = item.title;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          links.appendChild(link);
+        });
+      }
+
+      entry.appendChild(links);
+      papersContainer.appendChild(entry);
+    });
+  </script>
+
+  
+
+
+
+
+
+<script>
+(() => {
+  const sheet = document.getElementById("three-sheet");
+  if (!sheet) return;
+
+  const MAX_Y = 16;
+  const MAX_X = 9;
+  const HOLD_SPEED = 42;
+  const FOLLOW = 14;
+  const RETURN = 11;
+
+  let x = 0, y = 0;
+  let targetX = 0, targetY = 0;
+
+  const held = {
+    ArrowLeft: false,
+    ArrowRight: false,
+    ArrowUp: false,
+    ArrowDown: false
+  };
+
+  // Keep horizontal rotation from ever pushing the long page out of view.
+  // At maximum tilt the sheet gently shrinks toward ~90% width.
+  function fitScale() {
+    const horizontal = Math.min(1, Math.abs(y) / MAX_Y);
+    const vertical = Math.min(1, Math.abs(x) / MAX_X);
+    return 1 - 0.10 * horizontal - 0.025 * vertical;
+  }
+
+  sheet.style.transformOrigin = "50% 140px";
+  sheet.style.transformStyle = "preserve-3d";
+  sheet.style.willChange = "transform";
+  sheet.style.backfaceVisibility = "hidden";
+
+  document.documentElement.style.overflowX = "hidden";
+  document.body.style.overflowX = "hidden";
+
+  function clamp(v, lo, hi) {
+    return Math.max(lo, Math.min(hi, v));
+  }
+
+  function render() {
+    const s = Math.max(0.86, fitScale());
+    sheet.style.transform =
+      `perspective(2200px) rotateX(${x.toFixed(3)}deg) rotateY(${y.toFixed(3)}deg) scale(${s.toFixed(4)})`;
+  }
+
+  function reset() {
+    targetX = 0;
+    targetY = 0;
+    Object.keys(held).forEach(k => held[k] = false);
+  }
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      reset();
+      event.preventDefault();
+      return;
+    }
+
+    if (!(event.key in held)) return;
+
+    const tag = document.activeElement && document.activeElement.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+
+    held[event.key] = true;
+    event.preventDefault();
+  });
+
+  window.addEventListener("keyup", (event) => {
+    if (!(event.key in held)) return;
+    held[event.key] = false;
+    event.preventDefault();
+  });
+
+  window.addEventListener("blur", reset);
+
+  // MOBILE: rotation requires TWO fingers.
+  // One-finger gestures are untouched, so normal vertical scrolling remains normal.
+  let twoFingerActive = false;
+  let touchStartCenterX = 0;
+  let touchStartCenterY = 0;
+  let touchBaseY = 0;
+  let touchBaseX = 0;
+
+  function centerOfTwoTouches(touches) {
+    return {
+      x: (touches[0].clientX + touches[1].clientX) / 2,
+      y: (touches[0].clientY + touches[1].clientY) / 2
+    };
+  }
+
+  sheet.style.touchAction = "pan-y";
+
+  sheet.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 2) return;
+
+    const c = centerOfTwoTouches(event.touches);
+    twoFingerActive = true;
+    touchStartCenterX = c.x;
+    touchStartCenterY = c.y;
+    touchBaseY = y;
+    touchBaseX = x;
+
+    // Only suppress browser zoom/pan once the deliberate two-finger gesture begins.
+    event.preventDefault();
+  }, { passive: false });
+
+  sheet.addEventListener("touchmove", (event) => {
+    if (!twoFingerActive || event.touches.length !== 2) return;
+
+    const c = centerOfTwoTouches(event.touches);
+    const dx = c.x - touchStartCenterX;
+    const dy = c.y - touchStartCenterY;
+
+    targetY = clamp(
+      touchBaseY + (dx / Math.max(window.innerWidth, 320)) * MAX_Y * 2.4,
+      -MAX_Y, MAX_Y
+    );
+
+    // A smaller vertical component makes the whole sheet feel tangible,
+    // without stealing ordinary one-finger scrolling.
+    targetX = clamp(
+      touchBaseX - (dy / Math.max(window.innerHeight, 500)) * MAX_X * 2.0,
+      -MAX_X, MAX_X
+    );
+
+    event.preventDefault();
+  }, { passive: false });
+
+  function endTwoFingerGesture(event) {
+    if (!twoFingerActive) return;
+
+    // As soon as fewer than two touches remain, spring home.
+    if (!event.touches || event.touches.length < 2) {
+      twoFingerActive = false;
+      targetX = 0;
+      targetY = 0;
+    }
+  }
+
+  sheet.addEventListener("touchend", endTwoFingerGesture, { passive: true });
+  sheet.addEventListener("touchcancel", endTwoFingerGesture, { passive: true });
+
+  let last = performance.now();
+
+  function animate(now) {
+    const dt = Math.min(0.035, Math.max(0.001, (now - last) / 1000));
+    last = now;
+
+    if (!twoFingerActive) {
+      const h = (held.ArrowRight ? 1 : 0) - (held.ArrowLeft ? 1 : 0);
+      const v = (held.ArrowUp ? 1 : 0) - (held.ArrowDown ? 1 : 0);
+
+      if (h) {
+        targetY = clamp(targetY + h * HOLD_SPEED * dt, -MAX_Y, MAX_Y);
+      } else {
+        targetY += (0 - targetY) * (1 - Math.exp(-RETURN * dt));
+      }
+
+      if (v) {
+        targetX = clamp(targetX + v * HOLD_SPEED * 0.6 * dt, -MAX_X, MAX_X);
+      } else {
+        targetX += (0 - targetX) * (1 - Math.exp(-RETURN * dt));
+      }
+    }
+
+    const alpha = 1 - Math.exp(-FOLLOW * dt);
+    x += (targetX - x) * alpha;
+    y += (targetY - y) * alpha;
+
+    if (Math.abs(x) < 0.002 && Math.abs(targetX) < 0.002) x = targetX = 0;
+    if (Math.abs(y) < 0.002 && Math.abs(targetY) < 0.002) y = targetY = 0;
+
+    render();
+    requestAnimationFrame(animate);
+  }
+
+  render();
+  requestAnimationFrame(animate);
+})();
+</script>
+
+</body>
+</html>
