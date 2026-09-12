@@ -13,9 +13,9 @@ const PAPERS = [
     title: "Upper bounds for roots of B-functions, following Kashiwara and Lichtin",
     coauthors: "Mircea Mustaţǎ",
     journal: "Publ. Res. Inst. Math. Sci.",
-    volume: "",
-    year: "",
-    pages: "",
+    volume: "58",
+    year: "2022",
+    pages: "693--712",
     pageCount: "",
     buttons: [
       { title: "arXiv", url: "https://arxiv.org/abs/2003.03842" },
@@ -27,9 +27,9 @@ const PAPERS = [
     title: "The Hilbert series of Hodge ideals of hyperplane arrangements",
     coauthors: "Mircea Mustaţǎ",
     journal: "J. Singul.",
-    volume: "",
-    year: "",
-    pages: "",
+    volume: "20",
+    year: "2020",
+    pages: "232--250",
     pageCount: "",
     buttons: [
       { title: "arXiv", url: "https://arxiv.org/abs/2003.11681" },
@@ -41,9 +41,9 @@ const PAPERS = [
     title: "Minimal exponents of hyperplane sections: a conjecture of Teissier",
     coauthors: "Mircea Mustaţǎ",
     journal: "J. Eur. Math Soc.",
-    volume: "",
-    year: "",
-    pages: "",
+    volume: "25",
+    year: "2023",
+    pages: "4813--4840",
     pageCount: "",
     buttons: [
       { title: "arXiv", url: "https://arxiv.org/abs/2008.10345" },
@@ -54,9 +54,9 @@ const PAPERS = [
   {
     title: "On V-filtration, Hodge filtration and Fourier Transform",
     coauthors: "Qianyu Chen",
-    journal: "Selecta Math.",
-    volume: "",
-    year: "",
+    journal: "Selecta Math. (N.S.)",
+    volume: "29",
+    year: "2023",
     pages: "",
     pageCount: "",
     buttons: [
@@ -69,9 +69,9 @@ const PAPERS = [
     title: "V-filtrations and minimal exponents for local complete intersection singularities",
     coauthors: "Qianyu Chen, Sebastián Olano and  Mircea Mustaţǎ",
     journal: "J. Reine Angew. Math.",
-    volume: "",
-    year: "",
-    pages: "",
+    volume: "811",
+    year: "2024",
+    pages: "219--256",
     pageCount: "",
     buttons: [
       { title: "arXiv", url: "https://arxiv.org/abs/2208.03277" },
@@ -83,9 +83,9 @@ const PAPERS = [
     title: "The minimal exponent and k-rationality for local complete intersections",
     coauthors: "Qianyu Chen and Mircea Mustaţǎ",
     journal: "J. Ec. polytech. Math.",
-    volume: "",
-    year: "",
-    pages: "",
+    volume: "11",
+    year: "2024",
+    pages: "849--873",
     pageCount: "",
     buttons: [
       { title: "arXiv", url: "https://arxiv.org/abs/2212.01898" },
@@ -96,7 +96,7 @@ const PAPERS = [
   {
     title: "Fourier transform and Radon transform for mixed Hodge modules",
     coauthors: "",
-    journal: "Accepted",
+    journal: "Accepted to Ann. Inst. Fourier (Grenoble)",
     volume: "",
     year: "",
     pages: "",
@@ -110,8 +110,8 @@ const PAPERS = [
     title: "The minimal exponent of cones over smooth complete intersection projective varieties",
     coauthors: "Qianyu Chen and Mircea Mustaţǎ",
     journal: "Rev. Roumaine Math. Pures Appl.",
-    volume: "",
-    year: "",
+    volume: "70",
+    year: "2025",
     pages: "",
     pageCount: "",
     buttons: [
@@ -123,9 +123,9 @@ const PAPERS = [
   {
     title: "An introduction to V-filtrations",
     coauthors: "Qianyu Chen and Mircea Mustaţǎ",
-    journal: "",
+    journal: "in the Handbook of Geometry and Topology of Singularities VII",
     volume: "",
-    year: "",
+    year: "2025",
     pages: "",
     pageCount: "",
     buttons: [
@@ -138,9 +138,9 @@ const PAPERS = [
     title: "Some applications of microlocalization for local complete intersection subvarieties",
     coauthors: "",
     journal: "Math. Ann.",
-    volume: "",
-    year: "",
-    pages: "",
+    volume: "392",
+    year: "2025",
+    pages: "3565--3591",
     pageCount: "",
     buttons: [
       { title: "Math. Ann.", url: "https://link.springer.com/article/10.1007/s00208-025-03169-8" },
@@ -152,8 +152,8 @@ const PAPERS = [
     title: "Verdier specialization and restrictions of Hodge modules",
     coauthors: "Qianyu Chen and Morihiko Saito",
     journal: "Math. Z.",
-    volume: "",
-    year: "",
+    volume: "310",
+    year: "2025",
     pages: "",
     pageCount: "",
     buttons: [
@@ -163,11 +163,11 @@ const PAPERS = [
   },
 
   {
-    title: "Restrictions of Hodge modules using generalized V -filtrations",
+    title: "Restrictions of mixed Hodge modules using generalized V -filtrations",
     coauthors: "Qianyu Chen and Sebastián Olano",
-    journal: "Accepted",
-    volume: "",
-    year: "",
+    journal: "Adv. Math.",
+    volume: "499",
+    year: "2026",
     pages: "",
     pageCount: "",
     buttons: [
@@ -176,7 +176,7 @@ const PAPERS = [
   },
 
   {
-    title: "A Hodge theoretic generalization of Q-homology manifolds",
+    title: "A Hodge theoretic generalization of Q-homology manifolds I: General Case",
     coauthors: "Sebastián Olano and Debaditya Raychaudhury",
     journal: "Submitted",
     volume: "",
@@ -185,6 +185,19 @@ const PAPERS = [
     pageCount: "",
     buttons: [
       { title: "arXiv", url: "https://arxiv.org/abs/2501.14065" }
+    ]
+  },
+
+  {
+    title: "A Hodge theoretic generalization of Q-homology manifolds II: Local Complete Intersections",
+    coauthors: "Sebastián Olano and Debaditya Raychaudhury",
+    journal: "Submitted",
+    volume: "",
+    year: "",
+    pages: "",
+    pageCount: "",
+    buttons: [
+      { title: "arXiv", url: "https://arxiv.org/abs/2607.25861" }
     ]
   },
 
@@ -240,7 +253,7 @@ const PAPERS = [
     ]
   },
 
-  {
+   {
     title: "Characterization and finite descent of local cohomological invariants",
     coauthors: "Sebastián Olano and Debaditya Raychaudhury",
     journal: "Submitted",
@@ -251,7 +264,61 @@ const PAPERS = [
     buttons: [
       { title: "arXiv", url: "https://arxiv.org/abs/2603.06456" }
     ]
+  },
+
+  {
+    title: "Microlocal Bernstein--Sato polynomials on singular ambient varieties",
+    coauthors: "Michael Perlman",
+    journal: "Submitted",
+    volume: "",
+    year: "",
+    pages: "",
+    pageCount: "",
+    buttons: [
+      { title: "arXiv", url: "https://arxiv.org/abs/2607.06376" }
+    ]
+  },
+
+   {
+    title: "F-nilpotence and Hodge filtrations beyond isolated singularities",
+    coauthors: "Jakub Witaszek",
+    journal: "",
+    volume: "",
+    year: "",
+    pages: "",
+    pageCount: "",
+    buttons: [
+      { title: "arXiv", url: "https://arxiv.org/abs/2609.07804" }
+    ]
+  },
+
+   {
+    title: "Filtrations on Local Cohomology and Injectivity Theorems",
+    coauthors: "Qianyu Chen and Sebastián Olano",
+    journal: "",
+    volume: "",
+    year: "",
+    pages: "",
+    pageCount: "",
+    buttons: [
+      { title: "arXiv", url: "https://arxiv.org/abs/2603.06456" }
+    ]
+  },
+
+   {
+    title: "Relative Du Bois complexes through mixed Hodge modules",
+    coauthors: "",
+    journal: "",
+    volume: "",
+    year: "",
+    pages: "",
+    pageCount: "",
+    buttons: [
+      { title: "arXiv", url: "https://arxiv.org/abs/2603.06456" }
+    ]
   }
+
+  
   //new citation goes here! 
 ];
 
