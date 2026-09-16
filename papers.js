@@ -301,12 +301,12 @@ const PAPERS = [
     pages: "",
     pageCount: "",
     buttons: [
-      { title: "arXiv", url: "https://arxiv.org/abs/2603.06456" }
+      { title: "arXiv", url: "https://arxiv.org/abs/2609.16196" }
     ]
   },
 
    {
-    title: "Relative Du Bois complexes through mixed Hodge modules",
+    title: "A Hodge module construction of relative Du Bois complexes",
     coauthors: "",
     journal: "",
     volume: "",
@@ -314,7 +314,7 @@ const PAPERS = [
     pages: "",
     pageCount: "",
     buttons: [
-      { title: "arXiv", url: "https://arxiv.org/abs/2603.06456" }
+      { title: "arXiv", url: "https://arxiv.org/abs/2609.17148" }
     ]
   }
 
